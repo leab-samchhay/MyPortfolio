@@ -36,7 +36,7 @@ const Contact = () => {
   { icon: '📧', label: 'Email', value: 'leabsamchhay993@gmail.com', action: 'mailto:leabsamchhay993@gmail.com' },
   { icon: '📱', label: 'Phone', value: '0884461539', action: 'tel:+855884461539' },
   { icon: '🐙', label: 'GitHub', value: 'YourGitHubUsername', action: 'https://github.com/leab-samchhay' }, 
-  { icon: '📍', label: 'Location', value: 'Sangkat Tuek Thla Khan Toul Kork Phnom Penh Cambodia', action: null }
+  
 ];
 
   const getInputClass = () => {
