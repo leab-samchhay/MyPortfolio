@@ -9,7 +9,7 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Shoes',
+      title: 'Static Shoes E-Commerce Website',
       description: 'Frontend show product (Shoes) for sale.',
       tech: ['HTML', 'Tailwind', 'Javascript'],
       demo: "https://nike-shoes-bice.vercel.app/",  
@@ -20,7 +20,7 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: 'E-Commerce Sale Clothes',
+      title: 'StaticClothes E-Commerce Website',
       description: 'Frontend show product (Clothes) for sale.',
       tech: ['HTML', 'Tailwind', 'Javascript'],
       demo: "https://leab-samchhay.github.io/E-commerce-website-sale-clothes/",  
@@ -31,13 +31,35 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: 'E-Commerce Phone & Computer',
+      title: 'Static Phone & Computer E-Commerce Website',
       description: 'Frontend show product (Phone and Computer ) for sale.',
       tech: ['HTML', 'Tailwind', 'Reactjs'],
       demo: "https://tesreact-kappa.vercel.app/", // Changed from "Demo" to "demo" (lowercase)
       color: 'from-purple-500 to-pink-500',
       category: 'frontend',
       image: 'https://i.pinimg.com/736x/59/3d/a9/593da92a18d6b617bf6e556debbff061.jpg',
+      features: []
+    },
+    {
+      id: 4,
+      title: 'Static Product Food E-Commerce Website',
+      description: 'Frontend show product ( Food ) for sale.',
+      tech: ['HTML', 'Tailwind', 'Reactjs'],
+      demo: "https://restaurant-kh-ngld.vercel.app/", // Changed from "Demo" to "demo" (lowercase)
+      color: 'from-purple-500 to-pink-500',
+      category: 'frontend',
+      image: 'https://i.pinimg.com/1200x/85/ce/e1/85cee14750e778f55332467dfa307f58.jpg',
+      features: []
+    },
+    {
+      id: 5,
+      title: 'UX/UI Design',
+      description: 'design web fronend phone & Computer for sale.',
+      tech: ['Figma'],
+      demo: "https://www.figma.com/design/X6Ew5Ge89avaP37jxl323i/Assigment_Final_Electronic?node-id=0-1&t=QfrKHWgZcH15cTMW-0", // Changed from "Demo" to "demo" (lowercase)
+      color: 'from-purple-500 to-pink-500',
+      category: 'frontend',
+      image: 'https://i.pinimg.com/1200x/41/d4/73/41d473d91c0674dfe22e550578c17da7.jpg',
       features: []
     },
     // ... other projects

@@ -48,7 +48,7 @@ const About = () => {
             {/* Description */}
             <div className={`rounded-2xl p-6 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/20 dark:to-blue-900/20 `}>
               <p className={`text-lg leading-relaxed mb-4 text-blue-500 ${getTextClass()}`}>
-                I am an enthusiastic and hardworking student currently pursuing a Bachelor's. Degree in Information. I am eager to learn, adapt, and develop new skills to enhance my personal and professional growth. With strong problem-solving abilities, teamwork, and responsibility, I am committed to continuous improvement and future career success.
+                I am currently a third-year student at Build Bright University, majoring in Information Technology and specializing in Programming. I am seeking an opportunity to apply my technical skills and knowledge to contribute to the development of innovative software solutions.
               </p>
             </div>
 
