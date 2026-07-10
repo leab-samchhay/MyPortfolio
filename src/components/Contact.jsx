@@ -1,5 +1,5 @@
 // components/Contact.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useGlobalContext } from '../contexts/GlobalContext';
 
 const Contact = () => {
@@ -12,6 +12,81 @@ const Contact = () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
+  // Refs for animation
+  const headerRef = useRef(null);
+  const leftContentRef = useRef(null);
+  const rightContentRef = useRef(null);
+  const contactInfoRefs = useRef([]);
+
+  const [animated, setAnimated] = useState({
+    header: false,
+    left: false,
+    right: false,
+    contactInfo: []
+  });
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Animate header
+            if (entry.target === headerRef.current) {
+              setAnimated((prev) => ({ ...prev, header: true }));
+            }
+            
+            // Animate left content
+            if (entry.target === leftContentRef.current) {
+              setAnimated((prev) => ({ ...prev, left: true }));
+            }
+            
+            // Animate right content
+            if (entry.target === rightContentRef.current) {
+              setAnimated((prev) => ({ ...prev, right: true }));
+            }
+
+            // Animate contact info items
+            if (entry.target.classList.contains('contact-info-item')) {
+              const index = contactInfoRefs.current.indexOf(entry.target);
+              if (index !== -1) {
+                setAnimated((prev) => ({
+                  ...prev,
+                  contactInfo: [...prev.contactInfo, index]
+                }));
+              }
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    // Observe header
+    if (headerRef.current) {
+      observer.observe(headerRef.current);
+    }
+
+    // Observe left content
+    if (leftContentRef.current) {
+      observer.observe(leftContentRef.current);
+    }
+
+    // Observe right content
+    if (rightContentRef.current) {
+      observer.observe(rightContentRef.current);
+    }
+
+    // Observe contact info items
+    contactInfoRefs.current.forEach((item) => {
+      if (item) observer.observe(item);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -33,11 +108,10 @@ const Contact = () => {
   };
 
   const contactInfo = [
-  { icon: '📧', label: 'Email', value: 'leabsamchhay993@gmail.com', action: 'mailto:leabsamchhay993@gmail.com' },
-  { icon: '📱', label: 'Phone', value: '0884461539', action: 'tel:+855884461539' },
-  { icon: '🐙', label: 'GitHub', value: 'YourGitHubUsername', action: 'https://github.com/leab-samchhay' }, 
-  
-];
+    { icon: '📧', label: 'Email', value: 'leabsamchhay993@gmail.com', action: 'mailto:leabsamchhay993@gmail.com' },
+    { icon: '📱', label: 'Phone', value: '0884461539', action: 'tel:+855884461539' },
+    { icon: '🐙', label: 'GitHub', value: 'YourGitHubUsername', action: 'https://github.com/leab-samchhay' }, 
+  ];
 
   const getInputClass = () => {
     return isDarkMode
@@ -48,7 +122,15 @@ const Contact = () => {
   return (
     <section id="contact" className={`py-20 px-4 transition-colors duration-300 ${getBgClass()}`}>
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
+        {/* Header with animation */}
+        <div 
+          ref={headerRef}
+          className={`text-center mb-12 transition-all duration-700 transform ${
+            animated.header
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"
+          }`}
+        >
           <h2 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent mb-4">
             Get In Touch
           </h2>
@@ -59,7 +141,15 @@ const Contact = () => {
         </div>
         
         <div className="grid md:grid-cols-2 gap-12">
-          <div>
+          {/* Left Column with animation */}
+          <div 
+            ref={leftContentRef}
+            className={`transition-all duration-700 delay-300 transform ${
+              animated.left
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-10"
+            }`}
+          >
             <h3 className={`text-2xl font-bold mb-6 ${getTextClass()}`}>Let's Talk</h3>
             <p className={`mb-8 ${getSecondaryTextClass()}`}>
               I'm currently available for freelance work and full-time positions. 
@@ -68,7 +158,16 @@ const Contact = () => {
             
             <div className="space-y-4 mb-8">
               {contactInfo.map((info, index) => (
-                <div key={index} className="flex cursor-pointer items-center gap-4 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl hover:shadow-md transition">
+                <div 
+                  key={index}
+                  ref={(el) => (contactInfoRefs.current[index] = el)}
+                  className={`contact-info-item flex cursor-pointer items-center gap-4 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl hover:shadow-md transition-all duration-500 transform ${
+                    animated.contactInfo.includes(index)
+                      ? "opacity-100 translate-x-0"
+                      : "opacity-0 translate-x-5"
+                  }`}
+                  style={{ transitionDelay: `${index * 150}ms` }}
+                >
                   <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-500 rounded-full flex items-center justify-center text-white text-xl">
                     {info.icon}
                   </div>
@@ -87,7 +186,15 @@ const Contact = () => {
             </div>
           </div>
           
-          <div className="bg-gradient-to-r from-purple-600 to-blue-500 rounded-2xl p-0.5">
+          {/* Right Column (Form) with animation */}
+          <div 
+            ref={rightContentRef}
+            className={`bg-gradient-to-r from-purple-600 to-blue-500 rounded-2xl p-0.5 transition-all duration-700 delay-300 transform ${
+              animated.right
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 translate-x-10"
+            }`}
+          >
             <div className={`rounded-2xl p-6 ${getCardBgClass()}`}>
               <h3 className={`text-2xl font-bold mb-6 ${getTextClass()}`}>Send a Message</h3>
               
