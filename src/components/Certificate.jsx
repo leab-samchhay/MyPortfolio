@@ -83,42 +83,42 @@ const Certificate = () => {
   const certificates = [
     {
       id: 1,
-      title: 'Web Development Certificate',
+      title: 'Certificate of Outstanding StudentCertificate',
       issuer: 'Build Bright University',
-      date: '2024',
+      date: '2024-2025',
       icon: '🎓',
       color: 'from-purple-600 to-blue-500',
-      description: 'Completed advanced frontend development course covering React, JavaScript, and responsive design.',
-      skills: ['React', 'JavaScript', 'Tailwind CSS'],
+      description: '',
+      skills: [],
       certificateImage: certificateBBU,
       credentialId: 'BBU-WD-2024-001',
-      details: 'This certificate validates that the recipient has successfully completed the Web Development program with distinction, demonstrating proficiency in modern frontend technologies and best practices.'
+      details: ''
     },
     {
       id: 2,
       title: 'C++ Programming',
       issuer: 'ETECT Training Center',
-      date: '2023',
+      date: '2025',
       icon: '⚡',
       color: 'from-blue-600 to-cyan-500',
-      description: 'Completed comprehensive C++ programming course covering object-oriented programming and data structures.',
-      skills: ['C++', 'OOP', 'Data Structures'],
+      description: '',
+      skills: [],
       certificateImage: certificateETECT,
       credentialId: 'ETECT-CPP-2023-002',
-      details: 'This certificate validates proficiency in C++ programming language, including object-oriented programming concepts, data structures, and algorithm implementation.'
+      details: ''
     },
     {
       id: 3,
-      title: 'Professional Development',
+      title: 'Taught Microsoft Office ',
       issuer: 'AddBook Training',
-      date: '2024',
+      date: '2026',
       icon: '📚',
       color: 'from-green-500 to-teal-500',
-      description: 'Professional development course focusing on workplace skills, teamwork, and effective communication.',
+      description: '',
       skills: ['Teamwork', 'Communication', 'Leadership'],
       certificateImage: certificateADDBOOK,
       credentialId: 'AB-PD-2024-003',
-      details: 'This certificate recognizes the completion of professional development training, covering essential workplace skills including teamwork, effective communication, and leadership principles.'
+      details: ''
     },
   ];
 

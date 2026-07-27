@@ -4,12 +4,12 @@ import { useGlobalContext } from "../contexts/GlobalContext";
 
 /* -------------------- Data -------------------- */
 const SKILLS = [
-  { name: "React", level: 90, icon: "⚛️", color: "from-cyan-500 to-blue-500" },
-  { name: "JavaScript", level: 70, icon: "📘", color: "from-blue-600 to-indigo-600" },
+  { name: "React", level: 80, icon: "⚛️", color: "from-cyan-500 to-blue-500" },
+  { name: "JavaScript", level: 65, icon: "📘", color: "from-blue-600 to-indigo-600" },
   { name: "Tailwind CSS", level: 90, icon: "🎨", color: "from-teal-400 to-cyan-500" },
-  { name: "Sql Server", level: 80, icon: "🍃", color: "from-green-600 to-lime-600" },
-  { name: "Oracledb", level: 80, icon: "🅾️", color: "from-blue-600 to-indigo-600" },
-  { name: "Pogressql", level: 80, icon: "🅿️", color: "from-teal-400 to-cyan-500" },
+  { name: "Sql Server", level: 70, icon: "🍃", color: "from-green-600 to-lime-600" },
+  { name: "Oracledb", level: 50, icon: "🅾️", color: "from-blue-600 to-indigo-600" },
+  { name: "Pogressql", level: 50, icon: "🅿️", color: "from-teal-400 to-cyan-500" },
 ];
 
 const HOBBIES = ["📚 Reading", "🧑‍💻 Learn Code", "🔎 Research", "📸 Photography"];

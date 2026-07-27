@@ -7,7 +7,7 @@ import { useGlobalContext } from "../contexts/GlobalContext";
 const STATS = [
   { value: "6 Month", label: "Years Experience" },
   { value: "3+", label: "Projects Done" },
-  { value: "5+", label: "Happy Clients" },
+  { value: "0+", label: "Happy Clients" },
 ];
 
 /* -------------------- Component -------------------- */

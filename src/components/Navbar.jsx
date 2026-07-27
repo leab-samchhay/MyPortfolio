@@ -84,7 +84,7 @@ const Navbar = () => {
             onClick={() => scrollToSection("home")}
             className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent"
           >
-            Portfolio
+            Leab Samchhay
           </button>
 
           {/* Desktop Menu */}
