@@ -1,11 +1,12 @@
 
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
-import Certificate from './components/Certificate'
+import HeroSlice from './pages/HeroSlice'
+import Navba from './pages/Navba'
+import SkillPage from './pages/SkillPage'
+import AboutPage from './pages/AboutPage'
+import Project from './pages/Project'
+import CertificatePage from './pages/CertificatePage'
+import ContactPage from './pages/ContactPage'
+import FooterPage from './pages/FooterPage'
 
 
 
@@ -14,14 +15,15 @@ function App() {
   return (
     <>
        
-      <div className="min-h-screen transition-colors duration-300">
-        <Navbar />
-        <Hero />
-        <About />
-        <Projects />
-        <Certificate/>
-        <Contact />
-        <Footer />
+      <div >
+        <Navba/>
+        <HeroSlice/>
+        <AboutPage/>
+        <SkillPage/>
+        <Project/>
+        <CertificatePage/>
+        <ContactPage/>
+        <FooterPage/>
       </div>
     </>
   )
