@@ -143,8 +143,9 @@ import { motion } from "framer-motion";
 
 // ទាញទិន្នន័យមកខាងក្រៅ ដើម្បីបង្កើន Performance (ជៀសវាង Re-rendering)
 const EDUCATION_INFO = [
-    { icon: "🎓", text: "(2018 - 2024) : Studied and completed Bacc II successfully at Hun Sen Sandek High school." },
     { icon: "🎓", text: "(2024 - Present) : I am studying at Build Bright University." },
+    { icon: "🎓", text: "(July – September 2026) : I have completed a Full-Stack Web Development course at ICT Professional Training Center." },
+    { icon: "🎓", text: "(2018 - 2024) : Studied and completed Bacc II successfully at Hun Sen Sandek High school." },
     { icon: "💼", text: "6 Months : Taught Microsoft Office applications including Word, Excel, and PowerPoint at Add book computer center." },
 ];
 
@@ -181,7 +182,7 @@ const AboutPage = () => {
                         whileInView={{opacity:1 , x:0 , transition:{duration: 1}}}
                         viewport={{once: false , amount: 0.3}}
                     >
-                        <div className="w-full md:h-99 lg:h-79 text-3xl font-bold bg-white/5 backdrop-blur-xl border border-white/10 rounded-lg">
+                        <div className="w-full md:h-99 lg:h-110 text-3xl font-bold bg-white/5 backdrop-blur-xl border border-white/10 rounded-lg">
                             <p className={`text-lg leading-relaxed text-center font-medium text-white p-4 dark:text-blue-400`}>
                             I am currently a third-year student at Build Bright University, majoring in Information Technology and specializing in Programming. I am seeking an opportunity to apply my technical skills and knowledge to contribute to the development of innovative software solutions.
                             </p>

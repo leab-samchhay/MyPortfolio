@@ -54,11 +54,20 @@ const Project = () => {
         {
             id: 2,
             title: 'Academic Project Build API + React.js',
-            description: '•	Collaborated with a university instructor to create an Apartment Management System using ASP.NET (C#), React.js, and Oracle Database.',
+            description: 'Collaborated with a university instructor to create an Apartment Management System using ASP.NET (C#), React.js, and Oracle Database.',
             tech: ['React.js', 'ASP.NET', 'Oracle Database'],
             demo: "https://github.com/leab-samchhay/Apartment",  
             category: 'Backend',
             image: ASP
+        },
+        {
+            id: 3,
+            title: 'Library Management System',
+            description: 'Developed a library management system. Implemented book management, member management, borrowing, and return processes.',
+            tech: ['React.js', 'Laravel', 'Mysql Database'],
+            demo: "https://github.com/leab-samchhay/library-management",  
+            category: 'Backend',
+            image: "https://i.pinimg.com/736x/c8/cb/d3/c8cbd3d8ce4cccde74e60c7b24cefa5f.jpg"
         },
         
     ]
