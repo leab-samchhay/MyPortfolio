@@ -4,7 +4,7 @@ import { TypeAnimation } from 'react-type-animation';
 
 const HeroSlice = () => {
     return (
-        <section id="Home" className="min-h-screen bg-[#07101d] flex justify-center items-center p-6 md:p-12 overflow-hidden font-sans">
+        <section id="Home" className="min-h-screen bg-[#07101d] flex justify-center items-center p-6 md:p-12 overflow-hidden font-sans mt-10 md:">
             <div className="w-full max-w-6xl flex flex-col md:flex-row items-center justify-between gap-12 md:gap-20">
                 
                 {/* --- Left Column: Image & Glowing Blob --- */}
