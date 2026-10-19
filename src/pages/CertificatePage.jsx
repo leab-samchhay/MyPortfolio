@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import bbu from "../assets/bbu.jpg";
 import etect from "../assets/c++.jpg";
 import work from "../assets/work.jpg";
 import { motion, AnimatePresence } from "framer-motion";
 
 const CertificatePage = () => {
+    const navigate = useNavigate();
     // ប្រើ State សម្រាប់ចាប់យក Certificate ណាដែល User បានចុច
     const [selectedCert, setSelectedCert] = useState(null);
 
@@ -54,12 +56,21 @@ const CertificatePage = () => {
     };
 
     return (
-        <div className="bg-[#07101d] min-h-screen py-10 relative">
-            <div>
+        <div id="Certificate" className="bg-[#07101d] min-h-screen pt-28 pb-16 px-4 sm:px-6 lg:px-8 relative">
+            <div className="max-w-7xl mx-auto">
+                {/* Back to Home Button */}
+                <div className="mb-6">
+                    <button
+                        onClick={() => navigate('/')}
+                        className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-[#00d2ff] bg-white/5 hover:bg-white/10 border border-white/10 px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer"
+                    >
+                        <span>←</span> Back to Home
+                    </button>
+                </div>
+
                 <motion.div
-                    initial={{ opacity: 0, y: -100 }}
-                    whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
-                    viewport={{ once: false, amount: 0.5 }}
+                    initial={{ opacity: 0, y: -50 }}
+                    animate={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
                     className="text-center mb-8"
                 >
                     <h2 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-white/50 to-white bg-clip-text text-transparent mb-1">
@@ -69,9 +80,9 @@ const CertificatePage = () => {
                 </motion.div>
 
                 <motion.div
-                    initial={{ opacity: 0, y: 200 }}
-                    animate={{ opacity: 1, y: 1, transition: { duration: 2 } }}
-                    className="overflow-hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 bg-white/5 backdrop-blur-md border border-white/10 p-10 rounded-2xl max-w-7xl mx-auto"
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
+                    className="overflow-hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 bg-white/5 backdrop-blur-md border border-white/10 p-6 md:p-10 rounded-2xl max-w-7xl mx-auto"
                 >
                     {projectBackend.map((item, index) => (
                         <motion.div
@@ -80,7 +91,7 @@ const CertificatePage = () => {
                             whileInView="visible"
                             variants={boxVariant}
                             custom={index}
-                            viewport={{ once: true, amount: 0.5 }}
+                            viewport={{ once: true, amount: 0.2 }}
                         >
                             <div className="bg-white/10 rounded-lg backdrop-blur-md border-2 border-white/20 h-full flex flex-col justify-between">
                                 <div>
