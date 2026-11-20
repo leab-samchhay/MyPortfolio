@@ -16,6 +16,7 @@ function HomePage() {
       <AboutPage />
       <SkillPage />
       <Project />
+      <CertificatePage/>
       <ContactPage />
     </>
   );
